@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+账号：<input type="text" id="hao"><br/>
+密码：<input type="password" id="ma"><br/>
+<input onclick="fn()" type="button" value="按钮">
+<script src="jquery-1.8.3.min.js"></script>
+<script>
+    var hao=$("#hao");
+    var ma=$("#ma");
+    console.log(hao)
+    function fn(){
+        $.ajax({
+            url:"index.php",
+            type:"get",
+            data:{
+                user:hao.val(),
+                password:ma.val()
+            },
+            success:function(res){
+                alert(res);
+            }
+        })
+    }
+</script>
+</body>
+</html>
